@@ -5,7 +5,6 @@ namespace App\Http\Controllers\usuarios;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\tb_productos;
-use App\Models\Admin\tb_proveedores;
 
 class usersController extends Controller
 {

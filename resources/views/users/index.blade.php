@@ -7,12 +7,25 @@
 
     <title>Inicio</title>
   </head>
+  <style>
+      img{
+          max-width: 100%;
+      }
+      body{
+          text-align: center;
+          align-content: center;
+          align-items: center;
+      }
+      .card{
+          margin-right: 0 !important;
+      }
+  </style>
   <body>
     <div class="container">
         <h1 class="mt-4">Bienvenido!, vea nuestros productos más recientes</h1>
         <div class="row">
             @foreach($productos as $item)
-            <div class="card shadow col-md-3 text-center m-2">
+            <div class="card shadow col-md-3 text-center m-1">
                 <div class="card-header">
                     <h4 class="title">{{$item->nombre}}</h4>
                 </div>

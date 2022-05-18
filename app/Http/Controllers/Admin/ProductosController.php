@@ -16,12 +16,23 @@ class ProductosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $productos = tb_productos::all();
         return view('admin.productos.index', compact('productos'));
     }
-
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function pdf()
+    {
+        // $productos = tb_productos::all();
+        return view('admin.productos.pdf');
+        // return view('admin.productos.pdf', compact('productos'));
+    }
     /**
      * Show the form for creating a new resource.
      *

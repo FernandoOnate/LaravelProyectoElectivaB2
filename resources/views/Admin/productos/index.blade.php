@@ -24,7 +24,18 @@
 @endif
 <div class="card">
     <div class="card-header">
+        <style>
+            .btn-pdf{
+                background-color: #A10D03;
+                color: white;
+            }
+            .btn-pdf:hover{
+                color: white;
+                background-color: #D81002;
+            }
+        </style>
         <a href="{{route('admin.productos.create')}}" class="btn btn-primary">Crear un nuevo producto</a>
+        <a href="{{route('admin.productos.pdf')}}" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Generar reporte</a>
     </div>
     <div class="card-body">
         <table id="product" class="table table-striped" style="text-align:center;">
@@ -53,7 +64,7 @@
                     <td>
                         <img src="{{$item->imagen}}" width="70px" alt="Imgen del producto">
                     </td>
-                    <td width="15px"><a href="{{route('admin.productos.edit',$item)}}" class="btn btn-primary btn-sm">Editar</a></td>
+                    <td width="15px"><a href="{{route('admin.productos.edit',$item)}}" class="btn btn-primary btn-sm"></i>Editar</a></td>
                     <td width="15px">
                         <form action="{{route('admin.productos.destroy',$item)}}" method="post">
                             @method('delete')
