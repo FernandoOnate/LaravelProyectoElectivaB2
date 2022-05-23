@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\tb_productos;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\App;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductosController extends Controller
 {
@@ -21,17 +21,6 @@ class ProductosController extends Controller
     {
         $productos = tb_productos::all();
         return view('admin.productos.index', compact('productos'));
-    }
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function pdf()
-    {
-        // $productos = tb_productos::all();
-        return view('admin.productos.pdf');
-        // return view('admin.productos.pdf', compact('productos'));
     }
     /**
      * Show the form for creating a new resource.
@@ -181,5 +170,15 @@ class ProductosController extends Controller
             $mensaje = 'Error al eliminar';
         }
         return redirect()->route('admin.productos.index', ['e' => $e])->with('mensaje', $mensaje);
+    }
+
+    public function pdf(){
+        $productos = tb_productos::all();
+        $pdf = pdf::loadView('admin.productos.pdf',['productos'=>$productos]);
+        //si quiero que se vea
+        return $pdf->stream();
+
+        //si quiero que se descargue automatico
+        // return $pdf->download('reporte_productos.pdf');
     }
 }

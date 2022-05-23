@@ -24,5 +24,4 @@ Route::middleware([
     'verified'
 ])->group(function () {
     Route::get('', [usersController::class, 'index']);
-
 });
