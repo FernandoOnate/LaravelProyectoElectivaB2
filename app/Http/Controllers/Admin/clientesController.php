@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\tb_clientes;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
+
 
 class clientesController extends Controller
 {
@@ -134,5 +136,12 @@ class clientesController extends Controller
             $e = 1;
         }
         return redirect()->route('admin.clientes.index', ['e' => $e])->with('mensaje', $mensaje);
+    }
+    public function generar_pdf(){
+        $clientes = tb_clientes::all();
+        $pdf = pdf::loadView('admin.clientes.pdf', ['clientes' => $clientes]);
+        //si quiero que se vea
+        return $pdf->stream();
+        // return view('admin.clientes.pdf');
     }
 }

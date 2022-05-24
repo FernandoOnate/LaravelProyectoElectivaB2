@@ -235,6 +235,11 @@ return [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
         ],
+        [
+            'text' => 'Inicio',
+            'route'  => '/',
+            'topnav' => true
+        ],
 
         // Sidebar items:
         [

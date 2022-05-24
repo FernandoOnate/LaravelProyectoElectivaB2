@@ -35,7 +35,7 @@
             }
         </style>
         <a href="{{route('admin.productos.create')}}" class="btn btn-primary">Crear un nuevo producto</a>
-        <a href="{{route('reporte')}}" target="__blank" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Generar reporte</a>
+        <a href="{{route('reporte__producto')}}" target="__blank" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Generar reporte</a>
     </div>
     <div class="card-body">
         <table id="product" class="table table-striped" style="text-align:center;">

@@ -6,31 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <title>Producto | Reporte</title>
+    <title>Cliente | Reporte</title>
 </head>
 <body>
-    <div class="card">
+     <div class="card">
         <div class="card-header">
-            <h2 class="card-title">Reporte de productos | Esquina Verde</h2>
+            <h2 class="card-title">Reporte de clientes | Esquina Verde</h2>
             <div class="card-body">
-                <table id="product" class="table table-striped" style="text-align:center;">
+                <table id="client" class="table table-striped" style="text-align:center;">
                     <thead class="bg-cyan">
                         <tr>
+                            <th>ID</th>
                             <th>Nombre</th>
-                            <th>Precio</th>
-                            <th>Categoría</th>
-                            <th>Descripcion</th>
-                            <th>Stock</th>
+                            <th>Apellidos</th>
+                            <th>Teléfono</th>
+                            <th>Correo</th>
+                            <th>Código del cliente</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($productos as $item)
+                        @foreach($clientes as $item)
                         <tr>
+                            <td>{{$item->id}}</td>
                             <td>{{$item->nombre}}</td>
-                            <td>{{$item->precio}}</td>
-                            <td>{{$item->categoria}}</td>
-                            <td>{{$item->descripcion}}</td>
-                            <td>{{$item->stock}}</td>
+                            <td>{{$item->apellidos}}</td>
+                            <td>{{$item->telefono}}</td>
+                            <td>{{$item->correo}}</td>
+                            <td>{{$item->codigo}}</td>
                         </tr>
                         @endforeach
                     </tbody>

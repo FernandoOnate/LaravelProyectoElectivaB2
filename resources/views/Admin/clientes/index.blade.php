@@ -23,10 +23,21 @@
     <strong>{{session('mensaje')}}</strong>
 </div>
 @endif
-
+<style>
+    .btn-pdf{
+        background-color: #A10D03;
+        color: white;
+    }
+    .btn-pdf:hover{
+        color: white;
+        background-color: #D81002;
+    }
+</style>
 <div class="card">
     <div class="card-header">
         <a href="{{route('admin.clientes.create')}}" class="btn btn-primary">Crear un nuevo cliente</a>
+        <a href="{{route('reporte__clientes')}}" target="__blank" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Generar reporte</a>
+
     </div>
     <div class="card-body">
         <table id="client" class="table table-striped" style="text-align:center;">
