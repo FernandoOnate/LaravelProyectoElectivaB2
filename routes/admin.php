@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\pdfController;
 Route::get('', [HomeController::class, 'index']);
 
 Route::get('admin/productos/pdf',[ProductosController::class,'pdf'])->name('reporte');
+Route::get('admin/producto/pdf',[ProductosController::class, 'generarPDF'])->name('reporte__producto');
 
 Route::resource('admin/productos',ProductosController::class)->names('admin.productos');
 Route::resource('admin/proveedores',proveedoresController::class)->names('admin.proveedores');

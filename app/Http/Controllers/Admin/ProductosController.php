@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Admin\tb_productos;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\App;
 use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductosController extends Controller

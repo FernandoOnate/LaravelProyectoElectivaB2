@@ -64,7 +64,9 @@
                     <td>
                         <img src="{{$item->imagen}}" width="70px" alt="Imgen del producto">
                     </td>
-                    <td width="15px"><a href="{{route('admin.productos.edit',$item)}}" class="btn btn-primary btn-sm"></i>Editar</a></td>
+                    <td width="15px">
+                        <a href="{{route('admin.productos.edit',$item)}}" class="btn btn-primary btn-sm"></i>Editar</a>
+                    </td>
                     <td width="15px">
                         <form action="{{route('admin.productos.destroy',$item)}}" method="post">
                             @method('delete')

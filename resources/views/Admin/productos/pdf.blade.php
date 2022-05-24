@@ -26,7 +26,6 @@
                             <th>Categoría</th>
                             <th>Descripcion</th>
                             <th>Stock</th>
-                            <th>Imagen</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -37,9 +36,6 @@
                             <td>{{$item->categoria}}</td>
                             <td>{{$item->descripcion}}</td>
                             <td>{{$item->stock}}</td>
-                            <td>
-                                <img src="{{$item->imagen}}" width="70px" alt="Imgen del producto">
-                            </td>
                         </tr>
                         @endforeach
                     </tbody>
