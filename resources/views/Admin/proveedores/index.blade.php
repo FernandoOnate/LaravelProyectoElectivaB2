@@ -22,9 +22,20 @@
     <strong>{{session('mensaje')}}</strong>
 </div>
 @endif
+<style>
+    .btn-pdf{
+        background-color: #A10D03;
+        color: white;
+    }
+    .btn-pdf:hover{
+        color: white;
+        background-color: #D81002;
+    }
+</style>
 <div class="card">
     <div class="card-header">
         <a href="{{route('admin.proveedores.create')}}" class="btn btn-primary">Crear un nuevo proveedor</a>
+        <a href="{{route('reporte__proveedores')}}" target="__blank" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Generar reporte</a>
     </div>
     <div class="card-body">
         <table id="supplier" class="table table-striped" style="text-align:center;">

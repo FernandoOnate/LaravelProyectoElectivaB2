@@ -139,7 +139,8 @@ class clientesController extends Controller
     }
     public function generar_pdf(){
         $clientes = tb_clientes::all();
-        $pdf = pdf::loadView('admin.clientes.pdf', ['clientes' => $clientes]);
+        $cuenta = $clientes->count();
+        $pdf = pdf::loadView('admin.clientes.pdf', ['clientes' => $clientes, 'cuenta' => $cuenta]);
         //si quiero que se vea
         return $pdf->stream();
         // return view('admin.clientes.pdf');

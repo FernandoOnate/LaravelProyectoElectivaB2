@@ -50,6 +50,7 @@
                 <p>Cantidad de proveedores registrados: <em><b>{{$numero_proveedores}}</b></em>
                 </p>
                 <a href="{{ route('admin.proveedores.index') }}"class="btn btn-primary">Ver proveedores</a>
+                <a href="{{route('reporte__proveedores')}}" target="__blank" class="btn btn-pdf"><i class="fas fa-file-pdf"></i> Reporte proveedores</a>
             </div>
         </div>
     </div>

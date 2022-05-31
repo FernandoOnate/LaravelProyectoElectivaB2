@@ -173,7 +173,8 @@ class ProductosController extends Controller
 
     public function pdf(){
         $productos = tb_productos::all();
-        $pdf = pdf::loadView('admin.productos.pdf',['productos'=>$productos]);
+        $cuenta = $productos->count();
+        $pdf = pdf::loadView('admin.productos.pdf',['productos'=>$productos, 'cuenta' => $cuenta]);
         //si quiero que se vea
         return $pdf->stream();
 

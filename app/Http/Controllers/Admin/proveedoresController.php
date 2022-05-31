@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\tb_proveedores;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class proveedoresController extends Controller
 {
@@ -133,5 +134,13 @@ class proveedoresController extends Controller
             $mensaje = 'Error al eliminar';
         }
         return redirect()->route('admin.proveedores.index', ['e' => $e])->with('mensaje', $mensaje);
+    }
+    public function GenerarPDF(){
+        $proveedores = tb_proveedores::all();
+        $cuenta = $proveedores->count();
+        $pdf = pdf::loadView('admin.proveedores.pdf', ['proveedores' => $proveedores,'cuenta'=>$cuenta]);
+        //si quiero que se vea
+        return $pdf->stream();
+        // return view('admin.proveedores.pdf',compact('proveedores', 'cuenta'));
     }
 }

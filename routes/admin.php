@@ -12,6 +12,7 @@ Route::get('admin/producto/pdf',[ProductosController::class, 'pdf'])->name('repo
 Route::resource('admin/productos',ProductosController::class)->names('admin.productos');
 
 Route::resource('admin/proveedores',proveedoresController::class)->names('admin.proveedores');
+Route::get('admin/proveedore/pdf',[proveedoresController::class, 'GenerarPDF'])->name('reporte__proveedores');
 
 Route::resource('admin/clientes',clientesController::class)->names('admin.clientes');
 Route::get('admin/cliente/pdf',[clientesController::class, 'generar_pdf'])->name('reporte__clientes');

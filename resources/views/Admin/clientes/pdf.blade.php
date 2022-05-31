@@ -14,6 +14,7 @@
             <h2 class="card-title">Reporte de clientes | Esquina Verde</h2>
             <div class="card-body">
                 <table id="client" class="table table-striped" style="text-align:center;">
+                     <caption>Total de clientes listados: {{$cuenta}}</caption>
                     <thead class="bg-cyan">
                         <tr>
                             <th>ID</th>

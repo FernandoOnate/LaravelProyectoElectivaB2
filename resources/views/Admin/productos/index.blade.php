@@ -65,13 +65,14 @@
                         <img src="{{$item->imagen}}" width="70px" alt="Imgen del producto">
                     </td>
                     <td width="15px">
-                        <a href="{{route('admin.productos.edit',$item)}}" class="btn btn-primary btn-sm"></i>Editar</a>
+                        <a href="{{route('admin.productos.edit',$item)}}" class="btn btn-primary btn-sm"><i class="fa fa-fw fa-edit"></i>Editar</a>
                     </td>
                     <td width="15px">
                         <form action="{{route('admin.productos.destroy',$item)}}" method="post">
                             @method('delete')
                             @csrf
-                            <input type="submit" value="Eliminar" class="btn btn-danger btn-sm">
+
+                            <button class="btn btn-danger btn-sm" type="submit"><i class="fa fa-fw fa-trash"></i>Eliminar</button>
                         </form>
                     </td>
                 </tr>
