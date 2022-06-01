@@ -1,3 +1,5 @@
+<?php $dtz = new DateTimeZone("America/Bogota");
+$dt = new DateTime("now", $dtz);?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -13,6 +15,7 @@
         <div class="card-header">
             <h2 class="card-title">Reporte de clientes | Esquina Verde</h2>
             <div class="card-body">
+                <p>Fecha: {{$dt->format('F j, Y, g:i a') /*date('F j, Y, g:i a')*/}}</p>
                 <table id="client" class="table table-striped" style="text-align:center;">
                      <caption>Total de clientes listados: {{$cuenta}}</caption>
                     <thead class="bg-cyan">
